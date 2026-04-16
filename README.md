@@ -1,53 +1,79 @@
-# Jay Four Digital Solutions - Company Profile Website
+# CompanyProfile
 
-![Website Screenshot](https://via.placeholder.com/800x400?text=Jay+Four+Digital+Solutions)
+Company website for **JAYDIGITAL SOLUTIONS** with both **English (`en`)** and **Swahili (`sw`)** pages.
 
 ## Overview
-This is a **responsive static website** for **Jay Four Digital Solutions**, a Tanzanian digital services company.  
-It showcases services like:
 
-- Business & Company Registration (BRELA)  
-- Government Services (TRA, RITA, HESLB, TAUSI)  
-- Software Development (Websites, Mobile Apps, Desktop Systems)  
+This website includes:
 
-The site is **modern, mobile-friendly, and pro-looking**, built with **HTML, CSS, and JavaScript**, with no backend required.  
+- modern web pages
+- English and Swahili pages
+- automatic language redirection
+- mobile-friendly layout
 
----
+It is designed to present:
 
-## Features
+- Business and company registration support
+- Government and institutional follow-up services
+- website, app, and business system services
 
-- ✨ **Modern UI/UX** with hover effects and shadows  
-- 🌙 **Dark / Light Mode** toggle  
-- 📱 **Responsive design** for mobile, tablet, and desktop  
-- 🖥️ **Interactive Contact Form** sending messages via WhatsApp  
-- 🃏 **Service Cards** with hover animations  
-- ⚡ **Scroll animation** for content reveal  
-- 💾 Fully **static site** – uses local storage for theme preference  
-- 🚀 Hosted via **GitHub Pages**
+## Language pages
 
----
+Main public pages use language prefixes:
 
-## Project Structure
+- `/en`
+- `/en/about`
+- `/en/services`
+- `/en/contact`
+- `/sw`
+- `/sw/about`
+- `/sw/services`
+- `/sw/contact`
 
+How it works:
 
+- `/` automatically opens the preferred language
+- `/about`, `/services`, and `/contact` also move to the preferred language version
+- the visitor's language choice is remembered
+- the site checks saved preference first, then browser language
 
-
-
----
-
-## Installation & Usage
-
-1. Clone the repo:
+## Run locally
 
 ```bash
-git clone https://github.com/jemsi-442/jayfour-company-profile.git
-cd jayfour-company-profile
-https://jemsi-442.github.io/jayfour-company-profile/
+npm install
+npm run dev
+```
 
-Contact
+Then open `http://localhost:3000`.
 
-Jay Four Digital Solutions
-📞 +255 683 186 987
-📧 jemsifredrick4@gmail.com
+## Main sections
 
-🌍 Tanzania
+- `app/` - site pages and layouts
+- `components/` - shared sections and language content
+- `public/assets/` - logo, visuals, and service images
+- `middleware.js` - language redirection
+
+## Important files
+
+- `components/LanguageProvider.js` - English and Swahili content
+- `components/i18n.js` - language route helpers
+- `components/metadata.js` - page titles and descriptions by language
+- `components/ClientEffects.js` - interactive page effects
+- `app/[lang]/` - language-based pages for home, about, services, and contact
+
+## Deployment notes
+
+- Update `metadataBase` in `app/layout.js` if your production URL changes
+- Update `baseUrl` in `components/metadata.js` if your production URL changes
+- `app/robots.js` and `app/sitemap.js` are already included
+- page titles and descriptions are prepared for both `/en/...` and `/sw/...`
+
+## Scripts
+
+- `npm run dev` - start development server
+- `npm run build` - create production build
+- `npm start` - start production server
+
+## Repository
+
+- GitHub: `https://github.com/jemsi-442/companyprofile`
